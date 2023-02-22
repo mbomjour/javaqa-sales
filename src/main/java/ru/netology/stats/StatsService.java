@@ -37,8 +37,9 @@ public class StatsService {
 
     public int underAverageMonthlySales(int[] sales) { // количество месяцев ниже среднего уровня продаж
         int underMonthlySales = 0;
+        int average = averageMonthlySales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageMonthlySales(sales)) {
+            if (sales[i] < average) {
                 underMonthlySales++;
             }
         }
@@ -47,8 +48,9 @@ public class StatsService {
 
     public int overAverageMonthlySales(int[] sales) { // количество месяцев выше среднего уровня продаж
         int overMonthlySales = 0;
+        int average = averageMonthlySales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageMonthlySales(sales)) {
+            if (sales[i] > average) {
                 overMonthlySales++;
             }
         }
